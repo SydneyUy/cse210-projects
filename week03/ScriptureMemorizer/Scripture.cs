@@ -1,7 +1,7 @@
-class Scripture()
+class Scripture
 {
     private Reference _reference;
-    private List<Word> _words = new List<Word>();
+    private  List<Word> _words = new List<Word>();
 
 
     public Scripture(Reference reference, string text)
@@ -12,10 +12,11 @@ class Scripture()
 
         foreach (string piece in pieces)
         {
-            Word w = new Word(piece);
-            _words.Add(w);
+            _words.Add(new Word(piece));
         }
+
     }
+
 
     public void HideRandomWords(int numberToHide)
     { 
@@ -30,7 +31,8 @@ class Scripture()
 
     public string GetDisplayText()
     {
-       return _reference.GetDisplayText() + "\n";
+       return _reference.GetDisplayText() + _words + "\n";
+       
     }
     
     public bool IsCompletelyHidden()
