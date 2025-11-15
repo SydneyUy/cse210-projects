@@ -31,8 +31,8 @@ class Scripture
 
     public string GetDisplayText()
     {
-       return _reference.GetDisplayText() + _words + "\n";
-       
+       string words = string.Join(" ", _words.Select(w => w.GetDisplayText()));
+       return _reference.GetDisplayText() + words + "\n";
     }
     
     public bool IsCompletelyHidden()
