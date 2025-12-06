@@ -58,14 +58,14 @@ public class GoalManager
     public void ListGoalNames()
     {
         for (int i = 0; i < _goals.Count; i++)
-            Console.WriteLine($"{i + 1}. {_goals[i].GetDetailsString()}");
+            Console.WriteLine($"{i + 1}. {_goals[i].GetName()}");
     }
 
     public void ListGoalDetails()
     {
-         foreach (Goal g in _goals)
+        foreach (Goal g in _goals)
         {
-            g.GetDetailsString();
+            Console.WriteLine(g.GetDetailsString());
         }
     }
 
@@ -161,7 +161,7 @@ public class GoalManager
 
         for (int i = 1; i < lines.Length; i++)
         {
-           string[] parts = lines[i].Split('|');
+           string[] parts = lines[i].Split(':');
            string type = parts[0];
 
                 if (type == "SimpleGoal")

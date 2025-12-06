@@ -28,4 +28,9 @@ public abstract class Goal
     {
         return _points;
     }
+
+    public string GetName()
+    {
+        return _shortname;
+    }
 }
